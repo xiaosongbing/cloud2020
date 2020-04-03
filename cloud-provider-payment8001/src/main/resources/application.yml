@@ -7,9 +7,11 @@ spring:
   datasource:
     #   数据源基本配置
     username: root
-    password: /*8520
+    #password: /*8520
+    password: liquan
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.133.129:3306/atguigu_cloud2020?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    #url: jdbc:mysql://192.168.133.129:3306/atguigu_cloud2020?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://192.168.199.253:3306/cloudDB?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
     type: com.alibaba.druid.pool.DruidDataSource
     #   数据源其他配置
     initialSize: 5
@@ -42,8 +44,8 @@ eureka:
     fetch-registry: true
     service-url:
       #单机版
-      #defaultZone: http://eureka7001.com:7001/eureka
-      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka  # 集群版
+      defaultZone: http://eureka7001.com:7001/eureka
+      #defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka  # 集群版
   instance:
     instance-id: payment8001
 #   访问路径可以显示IP地址
