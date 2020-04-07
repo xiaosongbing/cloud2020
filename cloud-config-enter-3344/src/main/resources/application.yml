@@ -16,16 +16,20 @@ spring:
           search-paths:
             - springcloud-config
       label: master
+  #rabbitmq相关配置
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
-#rabbitmq相关配置
-rabbitmq:
-  host: localhost
-  port: 5672
-  username: guest
-  password: guest
 ##rabbitmq相关配置,暴露bus刷新配置的端点
 management:
   endpoints: #暴露bus刷新配置的端点
     web:
       exposure:
-        include: 'bus-refresh'
+        #include: "bus-refresh" #一直报405 待解决
+        include: "*" #成功刷新bus
+#  endpoint:
+#    bus-refresh:
+#      enabled: true
