@@ -1,8 +1,7 @@
 package com.atguigu.springcloud.controller;
 
-import jdk.nashorn.internal.ir.annotations.Reference;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @Date: 2020/4/8 17:43
  */
 @RestController
-@Reference //支持Nacos的动态刷新功能。
+@RefreshScope //支持Nacos的动态刷新功能。
 public class ConfigClientController {
 
     @Value("${config.info}")

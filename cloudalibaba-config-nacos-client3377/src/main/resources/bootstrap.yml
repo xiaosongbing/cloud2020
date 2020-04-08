@@ -10,9 +10,13 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848 #Nacos服务注册中心地址
+        #server-addr: 192.168.133.129:1111 #Nacos服务注册中心地址
       config:
+        #server-addr: 192.168.133.129:1111 #Nacos作为配置中心地址
         server-addr: 127.0.0.1:8848 #Nacos作为配置中心地址
         file-extension: yaml #指定yaml格式的配置
+        #group: DEV_GROUP
+        #namespace: c9cc4987-ac84-4e7e-8c55-f51f574e859e
 
 # ${spring.application.name}-${spring.profile.active}.${spring.cloud.nacos.config.file-extension}
 # nacos-config-client-dev.yaml
