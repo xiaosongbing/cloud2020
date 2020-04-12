@@ -1,20 +1,39 @@
 server:
   port: 8401
+
 spring:
   application:
     name: cloudalibaba-sentinel-service
   cloud:
     nacos:
       discovery:
-          server-addr: localhost:8848 #Nacos服务注册中心地址
+        server-addr: localhost:8848 #Nacos服务注册中心地址
     sentinel:
       transport:
         dashboard: localhost:8080 #配置Sentinel dashboard地址
         port: 8719
-      eager: true
+      datasource:
+        ds:
+          nacos:
+            server-addr: localhost:8848
+            dataId: cloudalibaba-sentinel-service
+            groupId: DEFAULT_GROUP
+            data-type: text
+            rule-type: "flow"
+              #Failed to bind properties under 'spring.cloud.sentinel.datasource.ds.nacos.rule-type' to com.alibaba.cloud.sentinel.datasource.RuleType:
+              #Property: spring.cloud.sentinel.datasource.ds.nacos.rule-type
+              #    Value: flow
+            #    Origin: class path resource [application.yml]:21:24
+            #    Reason: 2
 
 management:
   endpoints:
     web:
       exposure:
         include: '*'
+
+#feign:
+#  sentinel:
+#    enabled: true # 激活Sentinel对Feign的支持
+
+
