@@ -25,6 +25,17 @@ spring:
               #    Value: flow
             #    Origin: class path resource [application.yml]:21:24
             #    Reason: 2
+#  [
+#  {
+#    "resource": "/rateLimit/byUrl",
+#    "limitApp": "default",
+#    "grade": 1,
+#    "count": 1,
+#    "strategy": 0,
+#    "controlBehavior": 0,
+#    "clusterMode": false
+#  }
+#  ]
 
 management:
   endpoints:
