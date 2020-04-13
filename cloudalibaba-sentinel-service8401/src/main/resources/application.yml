@@ -18,24 +18,13 @@ spring:
             server-addr: localhost:8848
             dataId: cloudalibaba-sentinel-service
             groupId: DEFAULT_GROUP
-            data-type: text
+            data-type: json
             rule-type: "flow"
-              #Failed to bind properties under 'spring.cloud.sentinel.datasource.ds.nacos.rule-type' to com.alibaba.cloud.sentinel.datasource.RuleType:
-              #Property: spring.cloud.sentinel.datasource.ds.nacos.rule-type
-              #    Value: flow
-            #    Origin: class path resource [application.yml]:21:24
-            #    Reason: 2
-#  [
-#  {
-#    "resource": "/rateLimit/byUrl",
-#    "limitApp": "default",
-#    "grade": 1,
-#    "count": 1,
-#    "strategy": 0,
-#    "controlBehavior": 0,
-#    "clusterMode": false
-#  }
-#  ]
+          #Failed to bind properties under 'spring.cloud.sentinel.datasource.ds.nacos.rule-type' to com.alibaba.cloud.sentinel.datasource.RuleType:
+          #Property: spring.cloud.sentinel.datasource.ds.nacos.rule-type
+          #    Value: flow
+        #    Origin: class path resource [application.yml]:21:24
+        #    Reason: 2
 
 management:
   endpoints:
